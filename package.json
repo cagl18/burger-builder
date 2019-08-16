@@ -2,6 +2,7 @@
   "name": "burger-builder",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://cagl18.github.io/burger-builder",
   "dependencies": {
     "@babel/core": "7.5.5",
     "@svgr/webpack": "4.3.2",

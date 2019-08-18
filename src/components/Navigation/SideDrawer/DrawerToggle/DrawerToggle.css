@@ -1,0 +1,55 @@
+.DrawerToggle {
+  width: 40px;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.DrawerToggle div {
+  width: 90%;
+  height: 3px;
+  background-color: white;
+}
+
+@media (min-width: 500px) {
+  .DrawerToggle {
+    display: none;
+  }
+}
+
+/* .BtnBox {
+  cursor: pointer;
+}
+.MenuBtn {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin-top: -22px;
+  cursor: pointer;
+}
+
+.MenuBtn::before {
+  content: ' ';
+  display: block;
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  margin-top: 11px;
+  cursor: pointer;
+}
+
+.MenuBtn::after {
+  content: ' ';
+  display: block;
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  cursor: pointer;
+} */

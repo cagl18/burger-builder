@@ -3,14 +3,17 @@ import Button from '../../../components/UI/Button/Button';
 import Spinner from '../../../components/UI/Spinner/Spinner';
 import classes from './ContactData.css';
 import axios from '../../../axios-orders';
+import Input from '../../../components/UI/Input/Input';
 
 class ContactData extends Component {
   state = {
-    name: '',
-    email: '',
-    address: {
-      street: '',
-      postalCode: ''
+    orderForm: {
+      name: 'Carlos Gonzalez',
+      street: '123 main st',
+      zipCode: '10021',
+      country: 'USA',
+      email: 'test@test.com',
+      deliveryMethod: 'fastest'
     },
     loading: false
   };
@@ -21,17 +24,7 @@ class ContactData extends Component {
     this.setState({ loading: true });
     const order = {
       ingredients: this.props.ingredients,
-      price: this.props.price,
-      customer: {
-        name: 'Carlos Gonzalez',
-        address: {
-          street: '123 main st',
-          zipCode: '10021',
-          country: 'USA'
-        },
-        email: 'test@test.com'
-      },
-      deliveryMethod: 'fastest'
+      price: this.props.price
     };
     axios
       .post('/orders.json', order)
@@ -49,26 +42,26 @@ class ContactData extends Component {
   render() {
     let form = (
       <form>
-        <input
-          className={classes.Input}
+        <Input
+          inputtype='input'
           name='name'
           type='text'
           placeholder='Your Name'
         />
-        <input
-          className={classes.Input}
+        <Input
+          inputtype='input'
           name='email'
           type='text'
           placeholder='Your Mail'
         />
-        <input
-          className={classes.Input}
+        <Input
+          inputtype='input'
           name='street'
           type='text'
           placeholder='Street'
         />
-        <input
-          className={classes.Input}
+        <Input
+          inputtype='input'
           name='postal'
           type='text'
           placeholder='Postal Code'

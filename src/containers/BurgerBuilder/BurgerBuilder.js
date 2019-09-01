@@ -23,7 +23,6 @@ class BurgerBuilder extends Component {
 
   componentDidMount() {
     this.props.onInitIngredients();
-    console.log(this.props.error);
   }
 
   // addIngredientHandler = type => {

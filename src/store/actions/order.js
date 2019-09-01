@@ -30,14 +30,9 @@ export const purchaseBurger = (orderData, token) => {
       .post('/orders.json?auth=' + token, orderData)
       .then(response => {
         dispatch(purchaseBurgerSuccess(response.data.name, orderData));
-        // console.log(response);
-        // this.setState({ loading: false });
-        // this.props.history.push('/'); //redirecting to home after successul request
       }) //saving order on the backend
       .catch(error => {
         dispatch(purchaseBurgerFail(error));
-        // console.log(error);
-        // this.setState({ loading: false });
       });
   };
 };

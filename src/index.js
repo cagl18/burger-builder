@@ -11,7 +11,10 @@ import burgerBuilderReducer from './store/reducers/burgerBuilder';
 import orderReducer from './store/reducers/order';
 import authReducer from './store/reducers/auth';
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; //try to find redux_devtool or simply default to redux compose without devtools functionality
+const composeEnhancers =
+  process.env.NODE_ENV === 'development'
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    : null || compose; //try to find redux_devtool or simply default to redux compose without devtools functionality
 
 const rootReducer = combineReducers({
   auth: authReducer,
